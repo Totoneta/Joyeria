@@ -1,19 +1,16 @@
 const fDer = document.querySelector(".flecha-der");
+const fIzq = document.querySelector(".flecha-izq");
 const container = document.querySelector(".productos-container");
 
 
 fDer.addEventListener("click", deslizarDer);
-
-
-
-console.log(container);
-
+fIzq.addEventListener("click", deslizarIzq);
 
 
 function deslizarDer() {
-    container.classList.add("des-der");
-    container.addEventListener("animationend", () => {
-        container.classList.remove("des-der");
-        container.classList.add("mantener-der");
-    }, { once: true });
+    container.style.transform = 'translateX(-50%)'
+}
+
+function deslizarIzq() {
+    container.style.transform = 'translateX(0)'
 }

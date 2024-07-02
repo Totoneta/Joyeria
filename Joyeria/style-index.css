@@ -140,7 +140,7 @@ body {
     width: 75%;
 }
 
-/* Productos */
+/* Productos Carrucel */
 .flecha-der {
     position: absolute;
     height: 22rem;
@@ -148,10 +148,26 @@ body {
     background: linear-gradient(to left, #000000 10%, transparent);
     cursor: pointer;
     right: 0;
+    z-index: 1;
 }
 
 .flecha-der:hover {
     background: linear-gradient(to left, #2e2e2e 10%, transparent);
+}
+
+.flecha-izq {
+    position: absolute;
+    height: 22rem;
+    width: 3rem;
+    background: linear-gradient(to right, #000000 10%, transparent);
+    cursor: pointer;
+    left: 0;
+    z-index: 1;
+
+}
+
+.flecha-izq:hover {
+    background: linear-gradient(to right, #2e2e2e 10%, transparent);
 }
 
 .productos {
@@ -159,28 +175,18 @@ body {
     overflow: hidden;
 }
 
-@keyframes deslizarDer {
-    0% {}
-
-    100% {
-        margin-left: -100%;
-    }
-}
-
 .productos-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     height: 22rem;
     margin-bottom: 3rem;
     width: 200%;
-}
-
-.des-der {
-    animation: deslizarDer 2s 1;
-}
-
-.mantener-der {
-    margin-left: -100%;
+    transition: transform 2s;
+    position: relative;
+    z-index: 0;
+    background-color: #000;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
 }
 
 .prod {
@@ -189,19 +195,23 @@ body {
     flex-direction: column;
     align-items: center;
     width: 20%;
+    height: 22rem;
+    gap: 1rem;
 }
 
 
 .prod>img {
-    width: 100%;
-    height: 60%;
+    width: auto;
+    height: 13rem;
+    border: 3px solid #fff;
 }
 
 .prod-texto {
     text-align: center;
-    height: 50%;
-    width: 100%;
-    margin: 1rem;
+    height: 40%;
+    width: auto;
+    max-width: 90%;
+    color: #fff;
 }
 
 .prod-texto>h2 {
@@ -212,8 +222,77 @@ body {
     font-size: .9rem;
 }
 
+/* Compramos Joyas */
+
+.compramos-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: Mostrar;
+    animation-duration: 2s;
+    animation-range: entry 10% cover 55%;
+    view-timeline-name: --compramos;
+    view-timeline-axis: block;
+    animation-timeline: --compramos;
+}
+
+/* Animacion Scroll */
+@keyframes Mostrar {
+    from {
+        opacity: .3;
+        scale: 25%;
+    }
+
+    to {
+        opacity: 1;
+        scale: 100%;
+    }
+}
+
+.compramos-container>figure{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.compramos-container>figure>img{
+    width: 95%;
+    height: 30rem;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.compramos-text {
+    position: absolute;
+    z-index: 1;
+    margin: 0 auto;
+    width: 70%;
+    color: #000000;
+    text-shadow: 0px 0px 5px #ffdd00;
+    gap: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+}
+
+.compramos-text>h2{
+    font-size: 4rem;
+    width: 40rem;
+}
+
+.compramos-text>p{
+    font-size: 1.5rem;
+    width: 30rem;
+}
+
 /* Footer */
 .fot-div {
+    margin-top: 2rem;
     height: 15rem;
     display: flex;
     justify-content: space-around;
