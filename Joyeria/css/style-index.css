@@ -247,7 +247,7 @@ body {
 /* Animacion Scroll */
 @keyframes Mostrar {
     from {
-        opacity: .3;
+        opacity: 0;
         scale: 25%;
     }
 
